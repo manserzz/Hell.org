@@ -1,0 +1,161 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+/* Container principal */
+.home-container {
+    display: flex;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que a sidebar e o conteúdo principal se ajustem */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1A1A1A; /* Cor de fundo escuro da sidebar */
+    padding: 20px;
+    border-radius: 8px;
+    margin-right: 20px;
+    position: sticky;
+    top: 20px; /* Fixa a sidebar no topo */
+    height: calc(100vh - 40px); /* Garante que a sidebar ocupe toda a altura da tela, menos o padding */
+}
+
+.sidebar h2 {
+    color: #3a3aff; /* Azul claro inspirado no login */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #aaaaaa; /* Cor suave para os links */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    color: #3a3aff; /* Azul claro para links ao passar o mouse */
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #1E1E1E; /* Cor escura de fundo */
+    border-radius: 8px;
+    height: calc(100vh - 40px); /* Ajusta a altura para que o conteúdo não ultrapasse a altura da tela */
+    overflow-y: auto; /* Adiciona rolagem para o conteúdo, se necessário */
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word; /* Quebra as palavras longas dentro do conteúdo */
+    overflow-wrap: break-word; /* Garantia adicional para evitar transbordamento */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #fff;
+}
+
+.login-signup a {
+    color: #3a3aff; /* Azul claro para links */
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.login-signup a:hover {
+    text-decoration: underline;
+}
+
+/* Post */
+.post {
+    background-color: #262626; /* Fundo escuro para posts */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 100%; /* Garante que o post não ultrapasse a largura */
+    box-sizing: border-box;
+    flex-shrink: 0; /* Impede que o post encolha e ocupe espaço no final da página */
+    word-wrap: break-word; /* Quebra palavras longas dentro do post */
+    overflow-wrap: break-word; /* Garantia adicional para evitar transbordamento */
+}
+
+/* Post Header */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #3a3aff; /* Azul claro para o nome do autor */
+}
+
+.post-time {
+    color: #aaaaaa; /* Cor suave para o tempo */
+}
+
+.post-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.post-footer button {
+    background-color: #3a3aff; /* Azul claro para os botões */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.post-footer button:hover {
+    background-color: #3333cc; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilo para o link ativo */
+.sidebar ul li a.active {
+    color: #3a3aff; /* Azul claro para o link ativo */
+    font-weight: bold;
+}

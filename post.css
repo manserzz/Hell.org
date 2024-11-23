@@ -1,0 +1,86 @@
+/* Estilo básico para a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fundo escuro, para combinar com o tema do home */
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Texto claro */
+}
+
+.post-container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: #1e1e1e; /* Caixa de conteúdo escura */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #e0e0e0; /* Título claro */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #e0e0e0; /* Subtítulo claro */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+#post-content {
+    margin-bottom: 30px;
+}
+
+#post-content p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+#post-content p strong {
+    color: #b3b3b3; /* Cor suave para o autor e data */
+}
+
+/* Estilo para links */
+a {
+    text-decoration: none;
+    color: #007bff; /* Cor de link azul */
+    font-size: 1em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o botão de voltar */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #0056b3; /* Cor de fundo mais escura no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .post-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}

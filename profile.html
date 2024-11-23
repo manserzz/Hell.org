@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Perfil do Usuário</h1>
+        <div id="user-info">
+            <!-- As informações do usuário serão exibidas aqui -->
+        </div>
+        <a href="home.html">Voltar para a Home</a>
+    </div>
+
+    <script>
+        // Pega o nome do usuário da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');  // A URL vai ter ?username=manserzz
+
+        // Verifica se o usuário existe no localStorage
+        const user = JSON.parse(localStorage.getItem('loggedUser')); // Pega os dados do usuário logado
+
+        if (user && user.username === username) {
+            const userInfo = document.getElementById('user-info');
+            userInfo.innerHTML = `
+                <p><strong>Usuário:</strong> ${user.username}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+            `;
+        } else {
+            alert("Usuário não encontrado.");
+        }
+    </script>
+</body>
+</html>

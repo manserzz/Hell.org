@@ -1,0 +1,99 @@
+/* Resetando estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto */
+}
+
+/* Estilo da página de criação de post */
+.create-post-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #1e1e1e; /* Fundo escuro do formulário */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+/* Título da página */
+.header h1 {
+    text-align: center;
+    color: #fff; /* Cor branca para o título */
+    margin-bottom: 20px;
+}
+
+/* Estilo dos campos do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: #bbb; /* Cor de texto mais clara */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #444; /* Cor mais escura para borda */
+    border-radius: 4px;
+    background-color: #2a2a2a; /* Fundo escuro dos campos */
+    color: #e0e0e0; /* Cor do texto dentro dos campos */
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3; /* Cor roxa para o botão */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #003d7e; /* Cor de hover mais escura */
+}
+
+/* Estilo do link para voltar à página inicial */
+a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #3a3aff; /* Cor de destaque dourada */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.voltar {
+    width: 100px;
+    padding: 1px;
+    background-color: #0056b3; /* Cor roxa para o botão */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

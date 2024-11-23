@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Completo</title>
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <div class="post-container">
+        <h1>Post Completo</h1>
+        <div id="post-content">
+            <!-- O conteúdo do post será exibido aqui -->
+        </div>
+        <a href="home.html">Voltar para a Home</a>
+    </div>
+
+    <script>
+        // Pega o ID do post da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id'); // Pega o ID do post
+
+        // Carrega o post completo usando o ID
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+        const post = posts.find(p => p.id == postId);
+
+        if (post) {
+            const postContent = document.getElementById('post-content');
+            postContent.innerHTML = `
+                <h2>${post.title}</h2>
+                <p><strong>Autor:</strong> ${post.author}</p>
+                <p><strong>Data:</strong> ${post.time}</p>
+                <p>${post.content}</p>
+            `;
+        } else {
+            alert("Post não encontrado.");
+        }
+    </script>
+</body>
+</html>

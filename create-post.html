@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Post - Hell Org</title>
+    <link rel="stylesheet" href="create-post.css">
+</head>
+<body>
+    <div class="create-post-container">
+        <div class="header">
+            <h1>Criar um Novo Post</h1>
+        </div>
+
+        <form id="postForm">
+            <div class="form-group">
+                <label for="postTitle">Título</label>
+                <input type="text" id="postTitle" name="postTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="postContent">Conteúdo</label>
+                <textarea id="postContent" name="postContent" required></textarea>
+            </div>
+            <button type="submit">Postar</button>
+        </form>
+        <div>
+            <br>
+            <a href="home.html">Voltar para a Home</a>
+        </div>
+    </div>
+    
+    <script>
+        // Função para criar e postar o conteúdo
+        document.getElementById('postForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const postTitle = document.getElementById('postTitle').value;
+            const postContent = document.getElementById('postContent').value;
+            const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
+
+            const newPost = {
+                title: postTitle,
+                content: postContent,
+                author: loggedUser ? loggedUser.username : 'Anônimo',
+                time: new Date().toLocaleString()
+            };
+
+            // Salvar o post no localStorage ou no servidor
+            let posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts.push(newPost);
+            localStorage.setItem('posts', JSON.stringify(posts));
+
+            // Redirecionar para a página principal
+            window.location.href = 'home.html';
+        });
+    </script>
+</body>
+</html>
